@@ -1,0 +1,11 @@
+INDEX VERSION 1.134
+D:\LSH\jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\922250972.index
+\jspbook\src\main\java
+D:\LSH\jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1230688971.index
+\bookmarket\src\main\java
+D:\LSH\jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\944460640.index
+\jspbook\src\main\java
+D:\LSH\jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1330406390.index
+\jspbook\src\main\java
+D:\LSH\jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\649821688.index
+\jspbook\src\main\java
