@@ -1,0 +1,10 @@
+package chapter04;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.http.HttpServlet;
+
+public class Exam04_1 extends HttpServlet {
+	RequestDispatcher dc = req.getRequestDispatcher("chapter4/Exam4_1.jsp");
+	dc.forward(req,resq);
+			
+}
