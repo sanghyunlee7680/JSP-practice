@@ -1,0 +1,28 @@
+package dao;
+
+import java.util.ArrayList;
+
+import dto.Book;
+
+public class BookRepository 
+{
+	//저장소 변수
+	private static ArrayList<Book> listOfBooks = new ArrayList<Book>();
+	private static BookRepository repository = new BookRepository();
+	
+	
+	public BookRepository(){}
+	
+	//클래스 객체를 static 하여 생성하였기 때문에 함수에 static을 안붙여도
+	//접근이 가능하지만, private를 사용하여 클래스 내에서만 접근이
+	//가능하기 때문에함수에도 static을 사용해야한다.
+	public static ArrayList<Book> getAllBooks() 	
+	{
+		return listOfBooks;
+	}
+	public static BookRepository getRepository() 
+	{
+		return repository;
+	}
+	
+}

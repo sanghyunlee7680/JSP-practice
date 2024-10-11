@@ -104,6 +104,20 @@
 	<p>
 		<a href="4_0?id=${id}&name=<%=name%>">예제 4-0</a>
 	</p>
-
+	<hr></hr>
+	
+	<p>예제 5-1</p>
+	<form action="5_1">
+		<p> 아 이 디 : <input type="text" name="id">
+		<p> 비밀번호 : <input type="text" name="passwd">
+		<p> <input type="submit" value="전송"></p>
+	</form>
+	<p>
+		<a href="5_2">예제 5-2</a>
+	</p>
+	<p>
+		<a href="5_3">예제 5-3</a>
+	</p>
+	
 </body>
 </html>
