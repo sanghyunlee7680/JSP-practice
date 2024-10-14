@@ -32,9 +32,11 @@
 				<div class="h-100 p-2">
 					<h5><b><%=book.getName() %></b></h5>
 					<p> <%=book.getAuthor() %>
-					<br><%=book.getPublisher() %> | 35<%=book.getUnitPrice() %>원
-					<p> 37<%=book.getDescription().substring(0,60) %>...
+					<br><%=book.getPublisher() %> | <%=book.getUnitPrice() %>원
+					<p> <%=book.getDescription() %>...
 					<p> <%=book.getUnitPrice() %>원
+					<p> <a href="./book.jsp?id=<%=book.getBookId()%>"
+						class="btn btn-secondary" role="botton">상세 정보 &raquo;</a>
 				</div>
 			</div>
 			<%

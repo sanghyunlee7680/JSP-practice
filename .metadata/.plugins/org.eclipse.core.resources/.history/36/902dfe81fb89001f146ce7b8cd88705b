@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		String id = (String)req.getAttribute("id");
+		String pw = (String)req.getAttribute("pw");
+		String name = (String)req.getAttribute("name");
+		String phone1 = (String)req.getAttribute("phone1");
+		String phone2 = (String)req.getAttribute("phone2");
+		String phone3 = (String)req.getAttribute("phone3");
+		String sex = (String)req.getAttribute("sex");
+		String hobby1 = (String)req.getAttribute("hobby1");
+		String hobby2 = (String)req.getAttribute("hobby2");
+		String hobby3 = (String)req.getAttribute("hobby3");
+	%>
+	
+	<p> 아 이 디 : <% out.println(id); %>
+	<p> 비밀번호 : <% out.println(pw); %>
+	<p> 이	름 : <% out.println(name);%>
+	
+	
+</body>
+</html>

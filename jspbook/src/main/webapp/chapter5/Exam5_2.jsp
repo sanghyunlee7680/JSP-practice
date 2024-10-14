@@ -9,6 +9,7 @@
 </head>
 <body>	
 	<%
+	// Enumeration은 대부분 이 구조만 사용한다.
 		Enumeration en = request.getHeaderNames();
 		while (en.hasMoreElements()){
 			String headerName = (String) en.nextElement();
