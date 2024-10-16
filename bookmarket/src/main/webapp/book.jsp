@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="dto.Book" %>
-<jsp:useBean id="bookDA0" class="dao.BookRepository" scope="session"></jsp:useBean>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="dao.BookRepository" %>
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="./resources/css/bootstrap.min.css" rel="stylesheet" />
 <meta charset="UTF-8">
 <title>도서 정보</title>
 </head>
@@ -21,11 +22,15 @@
 		
 		<%
 			String id = request.getParameter("id");
-			Book book = bookDA0.getBookById(id);
+			BookRepository dao = BookRepository.getInstance();
+			Book book = dao.getBookById(id);
 		%>
 		
 		<div class="row align-items-md-stretch">
-			<div class="col-md-12">
+			<div class="col-md-5">
+				<img src="./resources/images/<%=book.getFilename() %>" style="width : 70%">
+			</div>
+			<div class="col-md-6">
 				<h3><b><%=book.getName() %></b></h3>
 				<p> <%=book.getDescription() %></p>
 				<p> <b>도서코드 : </b><span class="badge text-bg-danger"><%=book.getBookId() %></span>

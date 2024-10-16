@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import = "java.util.ArrayList" %>
 <%@ page import = "dto.Book" %>
-<jsp:useBean id="bookDA0" class="dao.BookRepository" scope="session"></jsp:useBean>
+<%@ page import = "dao.BookRepository" %>
 <!DOCTYPE html>
 <html>
 <head>
-<link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel = "stylesheet">
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -20,7 +20,8 @@
 			</div>
 		</div>
 		<%
-			ArrayList<Book> listOfBooks = bookDA0.getAllBooks();
+			BookRepository dao = BookRepository.getInstance();
+			ArrayList<Book> listOfBooks = dao.getAllBooks();
 		%>
 		
 		<div class="row align-items-md-stretch	text-center">
@@ -30,6 +31,7 @@
 			%>
 			<div class="col-md-4">
 				<div class="h-100 p-2">
+					<img src="./resources/images/<%= book.getFilename() %>" style="width : 250; height : 350;"/>
 					<h5><b><%=book.getName() %></b></h5>
 					<p> <%=book.getAuthor() %>
 					<br><%=book.getPublisher() %> | <%=book.getUnitPrice() %>원
@@ -43,6 +45,13 @@
 				}
 			%>
 		</div>
+		<form action="addBook">
+			<div class="mb-3 row">
+					<div class="col-sm-offset-2 col-sm-10">
+						<input type="submit" class="btn btn-primary" value="도서 등록">
+					</div>
+				</div>
+		</form>
 		<%@ include file = "footer.jsp" %>
 	</div>
 </body>
