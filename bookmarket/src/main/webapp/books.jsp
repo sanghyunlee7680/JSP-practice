@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
+<link href = "./resources/css/bootstrap.min.css" rel = "stylesheet"/>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -31,7 +31,7 @@
 			%>
 			<div class="col-md-4">
 				<div class="h-100 p-2">
-					<img src="./resources/images/<%= book.getFilename() %>" style="width : 250; height : 350;"/>
+					<img src="./resources/images/<%= book.getFilename() %>" width="250"; height="350";/>
 					<h5><b><%=book.getName() %></b></h5>
 					<p> <%=book.getAuthor() %>
 					<br><%=book.getPublisher() %> | <%=book.getUnitPrice() %>원

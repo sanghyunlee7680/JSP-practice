@@ -30,7 +30,8 @@ public class processaddBook extends HttpServlet
 		request.setCharacterEncoding("UTF-8");
 		
 		String filename="";
-		String realFolder = request.getServletContext().getRealPath("resource/images");
+		String realFolder = request.getServletContext().getRealPath("./resources/images");
+		System.out.println(realFolder);
 		int maxSize=5*1024*1024; // 최대 업로드될 파일 크기 5MB
 		String encType="utf-8"; // 인코딩 유형
 		
