@@ -2,6 +2,7 @@
 <%@ page import="dto.Book" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="dao.BookRepository" %>
+<%@ page errorPage="exceptionNoBookId.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
