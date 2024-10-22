@@ -33,4 +33,54 @@
   		<form-error-page>/chapter10/Exam10_3_failed.jsp</form-error-page>
   	</form-login-config>
   </login-config>
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/chapter11/500.jsp</location>
+  </error-page>
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/chapter11/404.jsp</location>
+  </error-page>
+  <error-page>
+  	<exception-type>java.lang.Exception</exception-type>
+  	<location>/chapter11//exception_type.jsp</location>
+  </error-page>
+
+  <filter>
+  	<filter-name>Exam12_1</filter-name>
+  	<filter-class>chapter012.Exam012_1_sub</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>Exam12_1</filter-name>
+  	<url-pattern>/12_1ser</url-pattern>
+  </filter-mapping>
+
+  <filter>
+  	<filter-name>Filter02</filter-name>
+  	<filter-class>chapter012.Exam012_2_fil</filter-class>
+  	<init-param>
+  		<param-name>param1</param-name>
+  		<param-value>admin</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>param2</param-name>
+  		<param-value>1234</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>Filter02</filter-name>
+  	<url-pattern>/12_2_S</url-pattern>
+  </filter-mapping>
+  <filter>
+  	<filter-name>Filter03</filter-name>
+  	<filter-class>chapter012.Exam012_3_fil</filter-class>
+  	<init-param>
+  		<param-name>filename</param-name>
+  		<param-value>c:\\logs\\monitor.log</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>Filter03</filter-name>
+  	<url-pattern>/12_2_S</url-pattern>
+  </filter-mapping>
 </web-app>
