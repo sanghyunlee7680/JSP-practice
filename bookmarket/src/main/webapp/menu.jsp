@@ -6,5 +6,6 @@
 		</svg>   
         <span class="fs-4">Home</span>
         <a href="books.jsp" class="d-flex align-items-center text-dark text-decoration-none" ><span class="fs-4">Products</span></a>
+        <a href="cart.jsp" class="d-flex align-items-center text-dark text-decoration-none" ><span class="fs-4">Cart</span></a>
     </a>    
 </header>    
