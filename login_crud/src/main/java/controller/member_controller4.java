@@ -10,21 +10,25 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+@WebServlet("/update")
+public class member_controller4 extends HttpServlet{
 
-
-@WebServlet("/join")
-public class member_controller extends HttpServlet{
-// 목표 : CREAT 데이터를 데이터베이스에 입력하는것이 목표
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		RequestDispatcher rd = req.getRequestDispatcher("join.jsp");
+		// 전처리
+		String id = req.getParameter("id");
+		// 모델이동
+		member_repository mr = member_repository.getInstance();
+		member_dto dto = mr.getOnemember(id);
+		// 뷰이동
+		req.setAttribute("DTO", dto);
+		RequestDispatcher rd = req.getRequestDispatcher("updateform.jsp");
 		rd.forward(req, resp);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//전처리
-		req.setCharacterEncoding("utf-8");
 		String id = req.getParameter("id");
 		String pw = req.getParameter("pw");
 		int age = Integer.parseInt(req.getParameter("age"));
@@ -34,12 +38,13 @@ public class member_controller extends HttpServlet{
 		dto.setPw(pw);
 		dto.setAge(age);
 		
-		//모델이동
+		
+		
+		//모델 이동
 		member_repository mr = member_repository.getInstance();
-		mr.member_create(dto);
+		mr.update_member(dto);
 		
-		//뷰이동
-		
+		//뷰 이동
 		resp.sendRedirect("readall");
 	}
 
