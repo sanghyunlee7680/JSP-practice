@@ -1,4 +1,13 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ page import="dto.Member" %>
+<%	
+	String sessionId = null;
+	session = request.getSession(false);
+	if(session!=null){
+		Member mb = (Member)session.getAttribute("user");
+		if(mb!=null){sessionId = mb.getName();}
+	}
+%>
 <header class="pb-3 mb-4 border-bottom">
 	<div class="container">
 		<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -10,6 +19,15 @@
 				<span class="fs-4">Home</span>   
 		    </a>
 		    <ul class="nav nav-pills">
+	      			<%if(sessionId==null){ %>
+						<li class="nav-item"><a class="nav-link" href="member_login">로그인 </a></li>
+						<li class="nav-item"><a class="nav-link" href="member_add">회원 가입</a></li>
+					<%} 
+					  else {%>
+						<li style="padding-top: 7px;">[<%=sessionId%>님]</li>
+						<li class="nav-item"><a class="nav-link" href="member_logout">로그아웃 </a></li>
+						<li class="nav-item"><a class="nav-link" href="member_update">회원 수정</a></li>
+					<%} %>
 		    	<!-- R: 전체 상품 가져오기 -->
 		    	<li class="nav-item"><a href="books" class="nav-link">도서 목록</a></li>
 		    	<!-- C: 상품 입력 -->
@@ -18,6 +36,8 @@
 		    	<li class="nav-item"><a href="editBook?edit=update" class="nav-link">도서 수정</a></li>
 		    	<!-- D: 상품 삭제 -->
 		    	<li class="nav-item"><a href="editBook?edit=delete" class="nav-link">도서 삭제</a></li>
+		    	<!-- 게시판 -->
+		    	<li class ="nav-item"><a href = "BoardListAction?pageNum=1" class = "nav-link"  >게시판</a></li>
 		    </ul>
 		</div>
 	</div>
