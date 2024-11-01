@@ -3,6 +3,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="dao.BookRepository" %>
 <%@ page errorPage="exceptionNoBookId.jsp" %>
+<%@ page session="false" %>
 <%
 	System.out.println("4.book.jsp 뷰로 이동");
 	Book bk = (Book)request.getAttribute("dto");

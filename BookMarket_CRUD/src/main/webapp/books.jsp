@@ -3,6 +3,7 @@
 <%@ page import = "dto.Book" %>
 <%@ page import = "dao.BookRepository" %>
 <%@ page import = "java.sql.*" %>
+<%@ page session="false" %>
 <%
 	System.out.println("4:Books.jsp 뷰로 이동함");
 %>

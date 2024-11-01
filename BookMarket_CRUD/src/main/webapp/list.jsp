@@ -20,8 +20,10 @@
 	if(session!=null){
 		System.out.println("세션 생성 완료");
 		Member mb = (Member)session.getAttribute("user");
+		System.out.println("세션아이디:" + mb.getId());
 		if(mb != null){
 			sessionId = mb.getId();
+			System.out.println("sessionId:" + sessionId);
 			sessionName = mb.getName();
 		}
 	}
@@ -35,7 +37,7 @@
 <title>Board</title>
 <script type="text/javascript">
 	function checkForm() {	
-		if (${sessionId==null}) {
+		if (<%=sessionId=null%>) {
 			alert("로그인 해주세요.");
 			return false;
 		}
@@ -56,9 +58,7 @@
     </div>
 	
 	<div class="row align-items-md-stretch   text-center">	 	
-		<form action="<c:url value="./BoardListAction.do"/>" method="post">
-	
-			
+		<form action="BoardListAction" method="post">			
 				<div class="text-end"> 
 					<span class="badge text-bg-success">전체 <%=total_record%>건	</span>
 				</div>
@@ -73,9 +73,7 @@
 						<th>글쓴이</th>
 					</tr>
 					<%
-					
 						for (int j = 0; j < boardList.size() ; j++){
-		
 							Board notice = (Board) boardList.get(j);
 					%>
 					<tr>
@@ -96,15 +94,15 @@
 			</div>
 			<div align="center">
 				<%
-					for(int i=1; i<total_page; i++){
+					for(int i=1; i<=total_page; i++){
 						
 				%>
-						<a href="BoardListAction?pageNum=${i}" >
+						<a href="BoardListAction?pageNum=<%=i%>" >
 				<%  	//pageNum : 현재 페이지
 						if(pageNum==i){ %> 
-						<font color='4C5317'><b> [${i}]</b></font>
+						<font color='4C5317'><b> [<%=i%>]</b></font>
 						<%}else{ %>
-						<font color='4C5317'> [${i}]</font>
+						<font color='4C5317'> [<%=i%>]</font>
 				<%		} %> 
 				</a>
 				<%  } %>

@@ -61,8 +61,35 @@ public Connection DBconn() {
 	
 	
 	//Create
-	public void create() {
+	public void create(Board bd) 
+	{
+		System.out.println("리파지토리의 create() 실행");
 		//DB연결
+		conn = DBconn();
+		//쿼리전송
+		String sql = "insert into board(id, name, subject, content, regist_day, hit, ip) values(?,?,?,?,?,?,?)";
+		try 
+		{
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bd.getId());
+			pstmt.setString(2, bd.getName());
+			pstmt.setString(3, bd.getSubject());
+			pstmt.setString(4, bd.getContent());
+			pstmt.setTimestamp(5, bd.getRegist_day());
+			pstmt.setInt(6, bd.getHit());
+			pstmt.setString(7, bd.getIp());
+			pstmt.executeUpdate();
+			//ResultSet 없음
+		} 
+		catch (SQLException e) {e.printStackTrace();}
+			try 
+			{
+				if(pstmt!=null)
+				pstmt.close();
+				if(conn!=null)
+					conn.close();
+			} 
+			catch (SQLException e) {e.printStackTrace();}
 	}
 	//Read All
 	public ArrayList<Board> getAllBoard() {

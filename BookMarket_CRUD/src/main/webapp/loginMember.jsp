@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8"%>
+<%@ page session="false" %>
 <%
 	System.out.println("2.loginMember.jsp로 이동함");
 %>

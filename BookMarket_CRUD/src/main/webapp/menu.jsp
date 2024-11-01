@@ -1,7 +1,9 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ page import="dto.Member" %>
+<%@ page session="false" %>
 <%	
 	String sessionId = null;
+	HttpSession session = null;
 	session = request.getSession(false);
 	if(session!=null){
 		Member mb = (Member)session.getAttribute("user");

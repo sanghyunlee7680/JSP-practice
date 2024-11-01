@@ -26,7 +26,11 @@ public class Read_Controller extends HttpServlet {
 		
 		System.out.println("1.Board Read_Controller의 doGet() 입장");
 		//전처리 
-		int pageNum = Integer.parseInt(req.getParameter("pageNum"));
+		String page = req.getParameter("pageNum"); // 데이터를 수신할 때 값이 null일수도 있는지 확인해 봐야한다.
+		int pageNum=1;
+		if(page != null) {
+			pageNum = Integer.parseInt(page);
+		}
 		//모델이동
 		BoardRepository br = BoardRepository.getInstance();
 		ArrayList<Board> allBoard = br.getAllBoard();

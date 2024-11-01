@@ -2,6 +2,7 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="dao.BookRepository" %>
 <%@ page import="dto.Book" %>
+<%@ page session="false" %>
 <%
 	System.out.println("3.updateBook.jsp로 이동함");
 	Book bk = (Book)request.getAttribute("dto");

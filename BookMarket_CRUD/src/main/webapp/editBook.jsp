@@ -3,6 +3,7 @@
 <%@ page import="dao.BookRepository" %>
 <%@ page import="java.util.*" %>
 <%@ page import="dto.Book" %>
+<%@ page session="false" %>
 <%
 	System.out.println("editBook.jsp로 이동함");
 	ArrayList<Book> arr = (ArrayList<Book>)request.getAttribute("list");
